@@ -1,0 +1,58 @@
+.sidebar {
+  width: 250px;
+  height: 1000px;
+  background-color:white;
+  color: black;
+  padding: 20px;
+  font-family: Inter, sans-serif;
+  position: fixed;
+}
+
+.logo {
+  margin-bottom: 30px;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+}
+
+.menu li {
+  padding: 12px;
+  cursor: pointer;
+  /* border-radius: 6px; */
+  /* transition: backgroun; */
+}
+
+.menu li:hover {
+  background-color: blue;
+  color:white;
+  border-radius: 10px;
+}
+.images{
+  width: 20px;
+    height: 20px;
+    /* color: ; */
+    border-radius: 30%; 
+}
+
+/* .images:hover{
+  background-colo: white;
+} */
+.profile {
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    /* user-select: none; */
+}
+
+.logout-button{
+  margin-top: 400px;
+  color:red;
+}
+.logout-button :hover{
+  color:white;
+}
+

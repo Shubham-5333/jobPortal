@@ -1,0 +1,154 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: green;
+}
+
+.login-container {
+  background-color: #E2E8F0;
+  height: 100vh;
+  margin-left: 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-form {
+  /* background: white; */
+  /* padding: 40px;
+  width: 320px; */
+  /* border-radius: 8px; */
+  /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form h2 {
+  /* text-align: center; */
+  margin-bottom: 20px;
+}
+
+
+.login-form input {
+  background-color: #E2E8F0;
+  width: 400px;
+  color: black;
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 6px;
+  border: 0px solid #E2E8F0;
+  outline: none;
+}
+
+.login-form input:focus {
+  border-color: #3b82f6;
+}
+
+.login-form button {
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  background-color: #3b82f6;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login-form button:hover {
+  background-color: #2563eb;
+}
+
+.main-login-container {
+  display: flex;
+  height: 100vh;
+}
+
+/* LEFT SIDE */
+.login-left {
+  flex: 1;
+  background: linear-gradient(135deg, #2563eb, #1e3a8a);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 40px;
+  padding-bottom: 80px;
+}
+
+.login-left h1 {
+  font-size: 45px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  max-width: 520px;
+}
+
+/*.login-left p {
+  font-size: 18px;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.login-left h4 {
+  margin-top: 30px;
+  font-weight: 500;
+} */
+
+/* RIGHT SIDE */
+.login-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f8fafc;
+}
+
+.form-label {
+  padding: '120px';
+  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+}
+
+.border-st {
+  background: rgba(255, 255, 255, 0.25);
+  padding: 8px 18px;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  width: fit-content;
+  margin-bottom: 25px;
+}
+
+.left-description {
+  font-size: 18px;
+  line-height: 1.6;
+  max-width: 500px;
+  color: #e2e8f0;
+}
+
+.form-select {
+  width: 420px;
+  padding: 10px;
+  /* margin-bottom: 15px; */
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  background-color: #E2E8F0;
+  color: #475569;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* focus effect */
+.form-select:focus {
+  border: 1px solid #3b82f6;
+}
+
+/* dropdown options */
+.form-select option {
+  background-color: white;
+  color: #1e293b;
+}
