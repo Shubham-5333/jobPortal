@@ -5,10 +5,32 @@ import { RiBookmarkLine,RiBuildingLine } from 'react-icons/ri'
 import company from '/company.jpg'
 import companylogo from '/company-logo.png'
 import location from '/location.png'
+import { useEffect } from "react";
 
 
 const Job = () => {
     // const arr = [];
+
+    useEffect(()=>{
+        console.log("hiiii");
+        
+        const fetchJobs = async() =>{
+            try {
+                const response = await fetch("http://localhost:3000/api/joblisting",{
+                    method:'GET',
+                    credentials:'include'
+                });
+
+                const data = await response.json()
+                console.log("data got", data);
+                
+            } catch (error) {
+                console.log(error);
+                
+            }
+        }
+        fetchJobs()
+    },[])
     
     const jobs = [
         {

@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import "../assets/login.css";
 import { Link, useNavigate } from "react-router-dom";
-import { RiShieldCheckLine } from 'react-icons/ri'
+import { RiShieldCheckLine, RiEyeLine, RiEyeOffLine } from 'react-icons/ri'
+import { useEffect } from "react";
 
 
 const UserLogin = () => {
@@ -10,6 +11,7 @@ const UserLogin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [err, setErr] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
 
   const handleSubmit = async (e) => {
@@ -25,24 +27,32 @@ const UserLogin = () => {
         headers: {
           "Content-Type": "application/json",
         },
+        credentials: "include",   // ⭐ VERY IMPORTANT
         body: JSON.stringify(userData),
       });
+
 
       const data = await response.json();
       console.log(data);
 
       if (response.ok) {
-        alert("login successful");
+        // alert("login successful");
+        localStorage.setItem("isLoggedIn", "true");
         navigate("/jobs");
-      }else{
+      } else {
         setErr("wrong email/password")
       }
     } catch (error) {
       console.log("userlogn.jsx", error)
     }
-
-    
   };
+
+  useEffect(() => {
+    const loggedIn = localStorage.getItem("isLoggedIn");
+    if (loggedIn) {
+      navigate("/jobs");
+    }
+  }, [])
 
   return (
     <div className="main-login-container">
@@ -76,14 +86,30 @@ const UserLogin = () => {
           {/* <br></br> */}
 
           <label className="form-label">Password</label>
-          <input
-            type="password"
-            placeholder="●●●●●●●●"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-          <p style={{color:'red'}}>{err}</p>
+
+          <div style={{ position: "relative" }}>
+            <input
+              type={showPassword ? "text" : "password"}
+              placeholder="●●●●●●●●"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+
+            <span
+              onClick={() => setShowPassword(!showPassword)}
+              style={{
+                position: "absolute",
+                right: "10px",
+                top: "35%",
+                transform: "translateY(-50%)",
+                cursor: "pointer"
+              }}
+            >
+              {showPassword ? <RiEyeOffLine /> : <RiEyeLine />}
+            </span>
+          </div>
+          <p style={{ color: 'red' }}>{err}</p>
 
 
           <button type="submit" style={{ marginTop: '20px' }}>SignIn</button>
